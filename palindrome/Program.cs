@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 bool isPalindrome = false;
-string a = "sad";
+string a = "madam";
 
 
 for (int i = 0; i < a.Length / 2; i++)

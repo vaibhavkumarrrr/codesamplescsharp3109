@@ -4,7 +4,11 @@ using System.Collections.Generic;
  * 
  * Using Stack - O(n) Time and O(n) Space
  * 
-* The idea is to use a stack to eliminate non-celebrities by comparing pairs. If one person knows the other, the first is discarded; otherwise, the second is discarded. Repeat until one candidate remains, then verify if they meet the celebrity conditions.
+* The idea is to use a stack to eliminate non-celebrities by comparing pairs. 
+* If one person knows the other, the first is discarded; 
+* otherwise, the second is discarded. 
+* Repeat until one candidate remains, then verify if they meet the celebrity 
+* conditions.
 * Create a stack and push all the ids in the stack.
 * Run a loop while there are more than 1 element in the stack.
 * Pop the top two elements from the stack (represent them as A and B)

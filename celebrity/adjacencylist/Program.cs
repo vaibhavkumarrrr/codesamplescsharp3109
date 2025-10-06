@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 
 /*
- * Using Stack - O(n) Time and O(n) Space
- *     
- * Create two arrays indegree and outdegree, to store the indegree and outdegree
- * Run a nested loop, the outer loop from 0 to n and inner loop from 0 to n.
- * For every pair i, j check if i knows j then increase the outdegree of i and indegree of j.
- * For every pair i, j check if j knows i then increase the outdegree of j and indegree of i.
- * Run a loop from 0 to n and find the id where the indegree is n and outdegree is 1.
- */
+Using Adjacency List - O(n2) Time and O(n) Space
+
+The idea is to model the problem as a directed graph 
+where edges represent “knows” relationships.
+A celebrity, if present, will be the single vertex with indegree = n 
+and outdegree = 1, meaning they are known by everyone else 
+but does not know anyone (except themselves).
+
+*Create two arrays indegree and outdegree, to store the indegree and outdegree
+* Run a nested loop, the outer loop from 0 to n and inner loop from 0 to n.
+* For every pair i, j check if i knows j then increase the outdegree of i 
+* and indegree of j.
+* For every pair i, j check if j knows i then increase the outdegree of j 
+* and indegree of i.
+* Run a loop from 0 to n and find the id where the indegree is n and 
+* outdegree is 1.
+*/
 
 public class CelebrityProblem
 {

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 /*
  * 
  * Using Two Pointers - O(n) Time and O(1) Space
- * The idea is to use two pointers, one from start and one from the end. Assume the start person is A, and the end person is B. If A knows B, then A must not be the celebrity. Else, B must not be the celebrity. At the end of the loop, only one index will be left as a celebrity. Go through each person again and check whether this is the celebrity. 
+ * The idea is to use two pointers, one from start and one from the end. 
+ * Assume the start person is A, and the end person is B. 
+ * If A knows B, then A must not be the celebrity. 
+ * Else, B must not be the celebrity. 
+ * At the end of the loop, only one index will be left as a celebrity. 
+ * Go through each person again and check whether this is the celebrity. 
  * Create two indices i and j, where i = 0 and j = n-1
  * Run a loop until i is less than j.
  * Check if i knows j, then i can't be a celebrity. so increment i, i.e. i++
