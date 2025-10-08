@@ -9,4 +9,9 @@ public class Animal
 	{
 		Console.WriteLine("The animal makes a sound.");
     }
+
+	public void SayType()
+	{
+			Console.WriteLine("I am : "+this.GetType().ToString());
+    }
 }
