@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Point2D.cs" />
+    <Compile Remove="Point2DStruct.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Classes\EnumsClasses.csproj" />
   </ItemGroup>
 

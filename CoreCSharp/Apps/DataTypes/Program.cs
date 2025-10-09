@@ -1,8 +1,33 @@
 ﻿using csharp.training.congruent.enums;
+using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 namespace csharp.training.congruent.apps
 {
+    public class A
+    {
+        public int i { get; set;  }
+     }
     internal class Program
     {
+        public static void changeA(ref A a)
+        {
+            a.i = 20;
+        }
+
+         
+        static string changeValue(string s)
+        {
+            return "Hello " + s;
+        }
+        static string getClassification(int temperature) => temperature switch
+        {
+            < 0 => throw new ArgumentOutOfRangeException(nameof(temperature), "Cannot be negative"),
+            < 20 => "Too Cold",
+            < 40 => "OK",
+            >= 41 and <= 60 => "Too Hot",
+            _ => "Unknown"
+        };
+
         static void Main(string[] args)
         {
             Console.WriteLine(unchecked((uint)-1));
@@ -33,21 +58,46 @@ namespace csharp.training.congruent.apps
             Console.WriteLine(nonNull);
             Console.WriteLine(Season.Winter);
             Days meetingDay = Days.Saturday;
+            int x = (int)Days.Saturday & (int)Days.Weekday;
+            Console.WriteLine("Weekday : " + x);
+            x = (int)Days.Saturday & (int)Days.Weekend;
+            Console.WriteLine("Weekend : " + x);
             Console.WriteLine("Meeting is on " + meetingDay);
             Console.WriteLine("Note: Weekends are on " + Days.Saturday + " and on " + Days.Sunday);
             Console.WriteLine(nonNull.GetType());
-            Days x = (Days)0;
-                       Console.WriteLine(x);
-            x = Days.Monday;
+            Days x1 = (Days)0;
             Console.WriteLine(x);
+            x1 = Days.Monday;
+            Console.WriteLine(x1);
 
             int test = 0;
             object obj = test;
-            obj = 34; 
+            obj = 34;
             Console.WriteLine(obj);
-            test = (int)obj; 
+            test = (int)obj;
             Console.WriteLine(test);
+            const double Pi = 3.1416;
+            Console.WriteLine(Pi);
+            //Pi = 3.45; 
+             int[]  intArr = { 1, 2};
+             Console.WriteLine(getClassification(25));
+            if (intArr[0] > 0)
+            {
+                Console.WriteLine("Positive");
+            } else
+            {
+                Console.WriteLine("Non Positive"); 
+            }
 
+            string s = "Sriram";
+            Console.WriteLine(s);
+            s = changeValue(s); 
+            Console.WriteLine(s);
+            Console.WriteLine(s);
+            A objA = new A();
+            objA.i = 10;
+            changeA(ref objA); 
+            Console.WriteLine(objA.i);
         }
     }
 }

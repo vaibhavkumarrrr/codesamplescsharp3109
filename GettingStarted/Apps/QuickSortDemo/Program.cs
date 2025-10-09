@@ -13,6 +13,7 @@ namespace csharp.training.congruent.apps
             {
                 Console.Write(val + " ");
             }
+           
         }
 
     }

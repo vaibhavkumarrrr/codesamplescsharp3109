@@ -1,6 +1,6 @@
 namespace csharp.training.congruent.enums 
 {
-	enum Season : ushort
+	public enum Season : ushort
 	{
 	Spring = 1,    
 	Summer = 2, 
