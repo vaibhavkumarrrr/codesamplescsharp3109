@@ -12,12 +12,13 @@ namespace csharp.training.congruent
         public static void Main(string[] args)
         {
             var p1 = new MutablePoint(1, 2);        // p1  = 1, 2
-            var p2 = p1;
+            MutablePoint ?p2 = p1;
             p2.Y = 200;                                     // p2 = 1,200, p1 Is still 1,2 
             Console.WriteLine($"{nameof(p1)} after {nameof(p2)} is modified: {p1}");
             Console.WriteLine($"{nameof(p2)}: {p2}");
             MutateAndDisplay(p2);
             Console.WriteLine($"{nameof(p2)} after passing to a method: {p2}");
+            p2 = null; 
         }
 
         private static void MutateAndDisplay(MutablePoint p)
