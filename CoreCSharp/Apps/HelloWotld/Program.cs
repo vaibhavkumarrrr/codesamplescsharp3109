@@ -1,38 +1,44 @@
-﻿namespace csharp.training.congruent.apps
+﻿using System.Runtime.InteropServices;
+using System.Text;
+
+namespace csharp.training.congruent.apps
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine(unchecked((uint)-1));
-            int a = unchecked(1 + int.MaxValue);
+            string a = "Hello , World!";
+            //string b = "Hello ";
+            //b += ", World!"; 
+            string b = "Hello , World!";
             Console.WriteLine(a);
-            char b = 'ஒ'; // write 
             Console.WriteLine(b);
-            int c = 34;
-            string s = "Sriram"; 
-            double d = 3.14159;
-    
-            double e = 2.71828;
-            double f = d + e;
-            if(f == 5.85987)
-            {
-                Console.WriteLine("Sum of d and e is 5.85987");
-            }
-           // decimal g = 2.71828;
-            //int x = 3 % 4;
-            Console.WriteLine(3 * 5 / 2.0);
-            uint h = 0xff_ff_ff_ff;
-            Console.WriteLine(h);
-            Console.WriteLine(uint.MaxValue);
-            Console.OutputEncoding  = System.Text.Encoding.UTF8;
+            Console.WriteLine(a==b);
+            Console.WriteLine(a.Equals(b)); 
+            Console.WriteLine(object.ReferenceEquals(a,b));
+            b = "Hello Rakesh";
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(a == b);
+            Console.WriteLine(a.Equals(b));
+           Console.WriteLine(object.ReferenceEquals(a, b));
+            StringBuilder bldr = new StringBuilder("Hello, "); 
+            bldr.Append("World!");
+            Console.WriteLine(bldr.ToString());
+            bldr.Replace("World","Rakesh");
+            Console.WriteLine(bldr.ToString());
+            Console.WriteLine(bldr.GetType());
 
-            Console.WriteLine("{0}{1}", '\uD83D', '\uDE48');
-            int? z = null;
-            Console.WriteLine(z.HasValue); 
-             int nonNull = z.GetValueOrDefault();
-            Console.WriteLine(nonNull);
+            Console.WriteLine("""
+                \\This is a test 
+                and on another ""line 
+                Yet another line.
+                """);
+            string s = $"Print new this line {Environment.NewLine} and this on second line"; 
+            Console.WriteLine("Print this line {0} and this on second line",Environment.NewLine); 
+            Console.WriteLine("\\\\Line1\"\"" + Environment.NewLine + "line2");
+            Console.WriteLine(s);
+            Console.WriteLine(s);
         }
     }
 } 
