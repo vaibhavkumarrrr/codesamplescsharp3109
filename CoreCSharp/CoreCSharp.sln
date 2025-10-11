@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassByValueRef", "Apps\Pass
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumsClasses", "Classes\EnumsClasses.csproj", "{0E1D74E4-4EFF-4865-870F-1FB89A57AC32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestProject", "Tests\SampleTestProject\SampleTestProject.csproj", "{454C3897-89BC-4BBC-9445-512880E79DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covariance", "Apps\Covariance\Covariance.csproj", "{21BDD264-668C-4697-A441-F1C4994C03B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{0E1D74E4-4EFF-4865-870F-1FB89A57AC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E1D74E4-4EFF-4865-870F-1FB89A57AC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E1D74E4-4EFF-4865-870F-1FB89A57AC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454C3897-89BC-4BBC-9445-512880E79DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454C3897-89BC-4BBC-9445-512880E79DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454C3897-89BC-4BBC-9445-512880E79DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454C3897-89BC-4BBC-9445-512880E79DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BDD264-668C-4697-A441-F1C4994C03B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BDD264-668C-4697-A441-F1C4994C03B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BDD264-668C-4697-A441-F1C4994C03B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BDD264-668C-4697-A441-F1C4994C03B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

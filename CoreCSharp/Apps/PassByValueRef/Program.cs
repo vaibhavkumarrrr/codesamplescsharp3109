@@ -22,6 +22,13 @@ namespace csharp.training.congruent.apps
             return s;
         }   
 
+        static   string changeStringAlt(string s)
+        {
+            string t = new string("Hello Changes"); 
+            Console.WriteLine($"Inside changeStringAlt: {t}");
+            return t; 
+        }
+
         static void Main(string[] args)
         {
 
@@ -61,6 +68,11 @@ namespace csharp.training.congruent.apps
             Console.WriteLine($"Original String : {str}");
             Console.WriteLine($"During change String : {changeString(ref str)}");
             Console.WriteLine($"Afer change String : {str}");
+            // reference has been changed 
+            //but original string is not changed
+
+            str = changeStringAlt(str);
+            Console.WriteLine($"Afer change Alt String : {str}");
             Console.WriteLine("********************************");
 
         }

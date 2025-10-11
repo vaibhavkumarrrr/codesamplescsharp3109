@@ -21,9 +21,11 @@ namespace csharp.training.congruent.apps
                 }
                 else
                 {
+                    Console.WriteLine("****"+key); 
                     dict[key] = 1;
                 }
             }
+            //System.Collections.Generic.S
             var sortedDict = from entry in dict orderby entry.Value descending select entry;
             foreach (var item in sortedDict)
             {

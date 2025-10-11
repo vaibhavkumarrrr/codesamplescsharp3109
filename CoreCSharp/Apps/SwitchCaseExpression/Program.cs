@@ -10,18 +10,18 @@ namespace csharp.training.congruent.apps
            // Reference: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression
             static void PrintHoliday(Month month) => Console.WriteLine(month switch
             {
-                Month.January => "We have Pongal.",
-                Month.February => "We have Maha Shivaratri.",
-                Month.March => "We have Holi.",
-                Month.April => "We have Tamil New Year.",
-                Month.May => "We have Labour Day.",
-                Month.June => "We have World Environment Day.",
-                Month.July => "We have US Independence Day.",
-                Month.August => "We have Independence Day.",
-                Month.September => "We have Teacher's Day.",
-                Month.October => "We have Gandhi Jayanthi and Diwali.",
-                Month.November => "We have Thanksgiving.",
-                Month.December => "We have Christmas.",
+                Month.January => $"{month} - We have Pongal.",
+                Month.February => $"{month} - We have Maha Shivaratri.",
+                Month.March => $"{month} - We have Holi.",
+                Month.April => $"{month} - We have Tamil New Year.",
+                Month.May => $"{month} - We have Labour Day.",
+                Month.June => $"{month} - We have World Environment Day.",
+                Month.July => $"{month} - We have US Independence Day.",
+                Month.August => $"{month} - We have Independence Day.",
+                Month.September => $"{month} - We have Teacher's Day.",
+                Month.October => $"{month} - We have Gandhi Jayanthi and Diwali.",
+                Month.November => $"{month} - We have Thanksgiving.",
+                Month.December => $"{month} - We have Christmas.",
                 _ => "Unknown Month"
             });
             // Use Enum.GetValues to iterate through all months

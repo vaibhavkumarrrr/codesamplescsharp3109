@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
-
+using CustomExtensionMethods;
 namespace csharp.training.congruent.apps
 {
     /* Sample code that shows hello world and string manipulations */
@@ -53,7 +53,8 @@ namespace csharp.training.congruent.apps
             Console.WriteLine("Print this line {0} and this on second line",Environment.NewLine);
             // Escape sequences & String Concatentation
             Console.WriteLine("\\\\Line1\"\"" + Environment.NewLine + "\n\n\\n is the NEWLINE and is not platform indepdendent - line2");
-            
+            String abc = "This is a a sample";
+            Console.WriteLine($"Word Count of '{abc}' is {abc.WordCount()}");
         }
     }
 } 
