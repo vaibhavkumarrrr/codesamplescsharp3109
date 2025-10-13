@@ -10,7 +10,6 @@ namespace ConsoleApp1
             //if (n < 3) { Thread.Sleep(2000); }
             return n*n;
         }
-
         public static async Task<int> 
             FetchSquaresAsync(List<int> numbers)
         {
@@ -50,7 +49,6 @@ namespace ConsoleApp1
             //Console.WriteLine(GetNumber(10));
             Console.WriteLine("Waiting");
             int d = await GetNumber(4);
-
             Console.WriteLine("Hello, World!" + d );
             //Task.Delay(1000).Wait();
            //Console.WriteLine("Waking up");
@@ -58,7 +56,9 @@ namespace ConsoleApp1
             //Console.WriteLine("Waking up"); ;
             List<int> list = new() { 1, 2, 3, 4 ,5 };  
             int sum = await FetchSquaresAsync(list);
-            Console.WriteLine("SUM :" + sum); 
+            Console.WriteLine("SUM :" + sum);
+            //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/yield 
+
         }
     }
 }
