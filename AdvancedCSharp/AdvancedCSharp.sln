@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomType", "CustomType\CustomType.csproj", "{40C2FED4-7E45-47D4-A0B7-EF6A90C53251}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomType", "csharp\training\congruent\classes\CustomType.csproj", "{40C2FED4-7E45-47D4-A0B7-EF6A90C53251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUsageOfCustomType", "SampleUsageOfCustomType\SampleUsageOfCustomType.csproj", "{5061F286-5688-45BF-AD37-297AE7B40180}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUsageOfCustomType", "csharp\training\congruent\apps\SampleUsageOfCustomType\SampleUsageOfCustomType.csproj", "{5061F286-5688-45BF-AD37-297AE7B40180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAsyncCode", "SimpleAsyncCode\SimpleAsyncCode.csproj", "{5E195DE1-0087-4CAB-95A8-4CB9B74D4765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAsyncCode", "csharp\training\congruent\apps\SimpleAsyncCode\SimpleAsyncCode.csproj", "{5E195DE1-0087-4CAB-95A8-4CB9B74D4765}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScraperExceptions", "WebScraperExceptions\WebScraperExceptions.csproj", "{9EE0EA39-D7BE-4E50-9FDD-F3CCF1D2F89E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScraperExceptions", "csharp\training\congruent\apps\WebScraperExceptions\WebScraperExceptions.csproj", "{9EE0EA39-D7BE-4E50-9FDD-F3CCF1D2F89E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileApp", "Apps\FileApp\FileApp.csproj", "{8E6251A2-EF1D-498A-BD4E-64A2FE4C62CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileApp", "csharp\training\congruent\apps\FileApp\FileApp.csproj", "{8E6251A2-EF1D-498A-BD4E-64A2FE4C62CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{23C02983-7288-4293-B095-31974DB3435C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleThreading", "csharp\training\congruent\apps\SimpleThreading\SimpleThreading.csproj", "{23C02983-7288-4293-B095-31974DB3435C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

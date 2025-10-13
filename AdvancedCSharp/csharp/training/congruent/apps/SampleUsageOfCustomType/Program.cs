@@ -1,6 +1,6 @@
-﻿using csharp.training.congruent.classes;
+﻿using CustomType;
 using System; 
-namespace csharp.training.congruent.apps
+namespace SampleUsageOfCustomType
 {
 
     public class AppException: System.ApplicationException
@@ -12,25 +12,13 @@ namespace csharp.training.congruent.apps
 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
-            using (StreamWriter writer = new StreamWriter("g:\\dotnet\\data.txt"))
-            {
-                writer.WriteLine("Line 1");
-                writer.WriteLine("Line 2");
-            }
-
-            string path = @"g:\dotnet\abc\sample.txt";
-            DriveInfo d = new DriveInfo(path);
-            Console.WriteLine(d.DriveType);
-            File.WriteAllText(path, "Hello, File Handling in C#!");
-            Console.WriteLine("File created successfully.");
-
             try
             {
                 throw new Exception("Test Exception");
             }
-            catch (Exception ex)
+            catch 
             {
             }
 
@@ -39,11 +27,9 @@ namespace csharp.training.congruent.apps
             Console.WriteLine($"u value: {u}");
             u = a;
             Console.WriteLine($"u value: {u}");
-      
-
             try
             {
-                EvenUInt u2 = new(1);
+                EvenUInt u2 = new(2); // Change it to 1 to see what happens
                 Console.WriteLine($"u2 value: {u2}"); ;
                 //EvenUInt u3 = new(0);
                 //Console.WriteLine(u2 / u3); 

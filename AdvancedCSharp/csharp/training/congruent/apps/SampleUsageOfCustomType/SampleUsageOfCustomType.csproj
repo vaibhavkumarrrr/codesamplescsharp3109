@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomType\CustomType.csproj" />
+    <ProjectReference Include="..\..\classes\CustomType.csproj" />
   </ItemGroup>
 
 </Project>
