@@ -1,8 +1,6 @@
 ﻿namespace csharp.training.congruent.classes
 {
     using System;
-    using System.Reflection.Metadata.Ecma335;
-
     public readonly struct EvenUInt
     {
         private  readonly uint _value;

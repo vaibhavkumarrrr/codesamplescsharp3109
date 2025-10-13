@@ -1,11 +1,6 @@
 ﻿namespace csharp.training.congruent.classes
 {
-    using System;
-    using System.Net.Http.Headers;
-    using System.Reflection.Metadata.Ecma335;
-    using System.Runtime.CompilerServices;
     using System.Text;
-
     public class Book
     {
         private string _name = "Unknown";
