@@ -1,10 +1,11 @@
-﻿namespace csharp.training.congruent.classes
+﻿namespace CustomType
 {
     using System;
-    public struct EvenUInt
+    using System.Reflection.Metadata.Ecma335;
+
+    public readonly struct EvenUInt
     {
-        private readonly uint _value;
-        public uint Value => _value;
+        private  readonly uint _value;
         public EvenUInt(uint value)
         {
             if (value % 2 != 0)
@@ -15,10 +16,9 @@
         public static implicit operator uint(EvenUInt even) => even._value;
 
         // Explicit conversion from uint to EvenUInt    
-        public static explicit operator EvenUInt(uint value) => new EvenUInt(value);
+        public static explicit operator EvenUInt(uint value) => new(value);
 
         public override string ToString() => _value.ToString();
-
     }
 }
 

@@ -1,15 +1,26 @@
 ﻿using System.Net.Http;
 using System.Runtime.InteropServices.Marshalling;
 
-namespace ConsoleApp1
+namespace SimpleThreading
 {
     internal class Program
     {
+        static async IAsyncEnumerable<int> FetchItemsAsync()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                await Task.Delay(1000); // Simulate asynchronous work
+                yield return i; // Yield each item as it becomes available
+            }
+        }
+
+
         public static async Task<int> SquareAsync(int n)
         {
-            //if (n < 3) { Thread.Sleep(2000); }
-            return n*n;
+            await Task.Delay(1);
+            return n * n; 
         }
+             
         public static async Task<int> 
             FetchSquaresAsync(List<int> numbers)
         {
@@ -22,7 +33,6 @@ namespace ConsoleApp1
 
             // Await all tasks to complete
             int[] results = await Task.WhenAll(tasks);
-            int x = 0; 
             Task <int> y = await Task.WhenAny(tasks);
             Console.WriteLine(" from some task: "+ y.Result);
 
@@ -39,13 +49,13 @@ namespace ConsoleApp1
             return sum;
         }
 
-        static Task <int> GetNumber(int n) {
+        static Task<int> GetNumber(int n) =>
            // Thread.Sleep(30); 
-           return Task.FromResult(n*n);
-        }
+           Task.FromResult(n * n);
 
-        static async Task Main(string[] args)
+        static async Task Main(string[] _)
         {
+            //ArgumentNullException.ThrowIfNull(args);
             //Console.WriteLine(GetNumber(10));
             Console.WriteLine("Waiting");
             int d = await GetNumber(4);
@@ -54,10 +64,16 @@ namespace ConsoleApp1
            //Console.WriteLine("Waking up");
             //Thread.Sleep(1000); 
             //Console.WriteLine("Waking up"); ;
-            List<int> list = new() { 1, 2, 3, 4 ,5 };  
+            List<int> list = [ 1, 2, 3, 4 ,5 ];  
             int sum = await FetchSquaresAsync(list);
             Console.WriteLine("SUM :" + sum);
             //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/yield 
+
+            // See how it is used ... 
+            await foreach (var item in FetchItemsAsync())
+            {
+                Console.WriteLine(item); // Prints each item as it is yielded
+            }
 
         }
     }

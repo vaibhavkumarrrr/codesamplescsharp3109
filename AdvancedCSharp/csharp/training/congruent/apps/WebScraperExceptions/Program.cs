@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-namespace csharp.training.congruent.apps
+namespace WebScraperExceptions
 {
     internal class Programcsharp
     {
@@ -65,7 +65,7 @@ namespace csharp.training.congruent.apps
                 throw;
             }
         }
-        static async Task Main(string[] args)
+        static async Task Main(string[] _)
         {
             var urls = new List<string>
         {

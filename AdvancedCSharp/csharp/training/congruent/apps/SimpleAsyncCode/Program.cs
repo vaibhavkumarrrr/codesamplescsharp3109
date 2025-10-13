@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace csharp.training.congruent.apps
+namespace SimpleAsyncCode 
 {
     public class Program
     {
@@ -33,7 +33,7 @@ namespace csharp.training.congruent.apps
             return [.. results];
         }
 
-        public static async Task Main(string[] args)
+        public static async Task Main(string[] _)
         {
             var urls = new List<string>
         {
