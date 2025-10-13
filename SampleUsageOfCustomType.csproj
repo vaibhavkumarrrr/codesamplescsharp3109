@@ -24,7 +24,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\classes\CustomType.csproj" />
+    <ProjectReference Include="..\CustomDataType\CustomDataType.csproj" />
+    <ProjectReference Include="CustomDataType.csproj" />
   </ItemGroup>
 
 </Project>

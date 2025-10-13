@@ -1,16 +1,14 @@
-﻿using CustomType;
+﻿using csharp.training.congruent.classes;
 using System; 
-namespace SampleUsageOfCustomType
+namespace csharp.training.congruent.apps.SampleUsageOfCustomType
 {
-
     public class AppException: System.ApplicationException
     {
         public AppException():base(){}
         public AppException(string message):base(message){}
-
     }
 
-    internal class Program
+    internal class SampleUsageOfCustomType
     {
         static void Main(string[] _)
         {

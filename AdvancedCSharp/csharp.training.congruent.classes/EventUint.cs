@@ -1,4 +1,4 @@
-﻿namespace CustomType
+﻿namespace csharp.training.congruent.classes
 {
     using System;
     using System.Reflection.Metadata.Ecma335;

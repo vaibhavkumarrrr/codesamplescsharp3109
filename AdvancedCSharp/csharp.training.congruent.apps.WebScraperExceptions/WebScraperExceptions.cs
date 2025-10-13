@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-namespace WebScraperExceptions
+namespace csharp.training.congruent.apps.WebScraperExceptions
 {
-    internal class Programcsharp
+    internal class WebScraperExceptions
     {
         private static readonly HttpClient httpClient = new();
 

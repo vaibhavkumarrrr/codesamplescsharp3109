@@ -1,9 +1,9 @@
 ﻿using System.Net.Http;
 using System.Runtime.InteropServices.Marshalling;
 
-namespace SimpleThreading
+namespace csharp.training.congruent.apps.SimpleThreading
 {
-    internal class Program
+    internal class SimpleThreading
     {
         static async IAsyncEnumerable<int> FetchItemsAsync()
         {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace SimpleAsyncCode 
+namespace csharp.training.congruent.apps.SimpleAsyncCode
 {
-    public class Program
+    public class SimpleAsyncCode
     {
         private static readonly HttpClient httpClient = new();
 
