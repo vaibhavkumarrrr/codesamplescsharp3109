@@ -1,6 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using CustomExtensionMethods;
+using HelloWotld;
+using System.Runtime.InteropServices;
 using System.Text;
-using CustomExtensionMethods;
 namespace csharp.training.congruent.apps
 {
     /* Sample code that shows hello world and string manipulations */
@@ -55,6 +56,17 @@ namespace csharp.training.congruent.apps
             Console.WriteLine("\\\\Line1\"\"" + Environment.NewLine + "\n\n\\n is the NEWLINE and is not platform indepdendent - line2");
             String abc = "This is a a sample";
             Console.WriteLine($"Word Count of '{abc}' is {abc.WordCount()}");
+
+            int inMoney = 100;
+            int outMoney = 25;
+
+            CheckUpdateBalance cub = new CheckUpdateBalance();
+
+            cub.CheckBalanceAmount(inMoney, outMoney);
+            Console.WriteLine("inmoney for passby value" + inMoney);
+
+            cub.UpdateBalanceAmount(ref inMoney, ref outMoney);
+            Console.WriteLine("inmoney for pass by reference value" + inMoney);
         }
     }
 } 
