@@ -3,7 +3,7 @@ namespace csharp.training.congruent.apps
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             Console.WriteLine("Hello, World!");
             Console.WriteLine($"Sum Int {ExampleOverLoad.Sum(3, 4)}");

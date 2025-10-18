@@ -3,12 +3,14 @@ namespace csharp.training.congruent.apps
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] _)
         {
-            int[] arr = { 10, 7, 8, 9, 1, 5 };
+            // newer style over {} 
+            int[] value = [10, 7, 8, 9, 1, 5];
+            int[] arr = value;
             int n = arr.Length;
 
-            QuickSort.quickSort(arr, 0, n - 1);
+            QuickSortAlgo.PerformQuickSort(arr, 0, n - 1);
             foreach (int val in arr)
             {
                 Console.Write(val + " ");

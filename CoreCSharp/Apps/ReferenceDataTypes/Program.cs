@@ -1,18 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
-namespace csharp.training.congruent
+namespace csharp.training.congruent.apps
 {
     public struct MutablePoint
     {
         public int X; public int Y; 
         public MutablePoint(int x, int y) => (X, Y) = (x, y);
-        public override string ToString() => $"({X}, {Y})";
+        public override readonly string ToString() => $"({X}, {Y})";
     }
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] _)
         {
-            MutablePoint p1 = new MutablePoint(1, 2);        // p1  = 1, 2
+            MutablePoint p1 = new(1, 2);        // p1  = 1, 2
             MutablePoint p2 = p1;
             p2.Y = 200;   
              // p2 = 1,200, p1 Is still 1,2 

@@ -1,9 +1,10 @@
-﻿using csharp.training.congruent.enums;
+﻿using csharp.training.congruent.classes;
+using csharp.training.congruent.enums;
 namespace csharp.training.congruent.apps
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             // Switch Case Expression to print holidays based on month
             // Uses C# 13.0 feature: switch expression with patterns
@@ -26,7 +27,8 @@ namespace csharp.training.congruent.apps
             });
             // Use Enum.GetValues to iterate through all months
 
-            foreach (Month month in Enum.GetValues(typeof(Month)))
+            //foreach (Month month in Enum.GetValues(typeof(Month)))
+            foreach (Month month in Enum.GetValues<Month>())
             {
                 PrintHoliday(month);
             }

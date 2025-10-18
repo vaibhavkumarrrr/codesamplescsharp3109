@@ -3,36 +3,47 @@ namespace csharp.training.congruent.apps
 {
     public class A
     {
-        public int i { get; set; }
-        public static void changeAValue(A a)
+        private int i1;
+
+        public int Geti()
         {
-            a.i = 20;
+            return i1;
         }
-        public static void changeARef(ref A a)
+
+        public void Seti(int value)
         {
-            a.i = 20;
+            i1 = value;
+        }
+
+        public static void ChangeAValue(A a)
+        {
+            a.Seti(20);
+        }
+        public static void ChangeARef(ref A a)
+        {
+            a.Seti(20);
         }
     }
 
     internal class Program
     {
-         static string changeString(ref string s)
+         static string ChangeString(ref string s)
         {
             s = "Changed";
             return s;
         }   
 
-        static   string changeStringAlt(string s)
+        static   string ChangeStringAlt(string _)
         {
-            string t = new string("Hello Changes"); 
+            string t = new("Hello Changes"); 
             Console.WriteLine($"Inside changeStringAlt: {t}");
             return t; 
         }
 
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
 
-            Point2DStruct p = new Point2DStruct(1, 2);
+            Point2DStruct p = new(1, 2);
             Console.WriteLine($"Structure Before change by Value: {p}");
             Point2DStruct.ModifyPointValue(p);
             Console.WriteLine($"Structure After change by Value: {p}");
@@ -42,7 +53,7 @@ namespace csharp.training.congruent.apps
             Console.WriteLine("********************************");
 
 
-            Point2D p2 = new Point2D(1, 2);
+            Point2D p2 = new(1, 2);
             Console.WriteLine($"Class Before change by Value: {p2}");
             Point2D.ModifyPointValue(p2);
             Console.WriteLine($"Class After change by Value: {p2}");
@@ -53,12 +64,12 @@ namespace csharp.training.congruent.apps
 
 
             // as long as you pass a reference type, you can modify its properties
-            A objA = new A();
-            objA.i = 10;
-            A.changeAValue(objA);
-            Console.WriteLine(objA.i);
-            A.changeARef(ref objA);
-            Console.WriteLine(objA.i);
+            A objA = new();
+            objA.Seti(10);
+            A.ChangeAValue(objA);
+            Console.WriteLine(objA.Geti());
+            A.ChangeARef(ref objA);
+            Console.WriteLine(objA.Geti());
             Console.WriteLine("********************************");
 
             // Strings are immutable though
@@ -66,12 +77,12 @@ namespace csharp.training.congruent.apps
             // passing them as ref resolves this issue  
             string str = "Original";
             Console.WriteLine($"Original String : {str}");
-            Console.WriteLine($"During change String : {changeString(ref str)}");
+            Console.WriteLine($"During change String : {ChangeString(ref str)}");
             Console.WriteLine($"Afer change String : {str}");
             // reference has been changed 
             //but original string is not changed
 
-            str = changeStringAlt(str);
+            str = ChangeStringAlt(str);
             Console.WriteLine($"Afer change Alt String : {str}");
             Console.WriteLine("********************************");
 

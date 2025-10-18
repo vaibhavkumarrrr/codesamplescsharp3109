@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             bool isPalindrome = false;
             string a = "madam";

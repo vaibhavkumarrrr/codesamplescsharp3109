@@ -1,28 +1,35 @@
 ﻿using System.Text.RegularExpressions;
 namespace csharp.training.congruent.apps
 {
-    internal class Program
+    internal partial class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             var input = "asdads sdfdsf #burgers, #rabbits dsfsdfds #sdf #dfgdfg #sdf #sdf";
-            var regex = new Regex(@"#\w+");
+            //var regex = new Regex(@"#\w+");
+            var regex = MyRegex();
             var matches = regex.Matches(input);
-            Dictionary<string, int> dict = new Dictionary<string, int>();
+            Dictionary<string, int> dict = [];
 
             // https://stackoverflow.com/questions/289/how-do-you-sort-a-dictionary-by-value 
-
-            foreach (var match in matches)
+            if (matches is not null)
             {
-                var key = dict.ContainsKey(match.ToString()) ? match.ToString() : match.ToString().ToLower();
-                if (dict.ContainsKey(key))
+                foreach (var match in matches)
                 {
-                    dict[key]++;
-                }
-                else
-                {
-                    Console.WriteLine("****"+key); 
-                    dict[key] = 1;
+                    if (match is not null)
+                    {
+                        // REALLY REALLY DEFENSIVE CODING...
+                        string? s = match?.ToString(); 
+                        var key = dict.ContainsKey(s!) ? s! : s!.ToLower();
+                        if (dict.TryGetValue(key, out int value))
+                        {
+                            dict[key] = ++value;
+                        }
+                        else
+                        {
+                            dict[key] = 1;
+                        }
+                    }
                 }
             }
             //System.Collections.Generic.S
@@ -32,5 +39,8 @@ namespace csharp.training.congruent.apps
                 Console.WriteLine($"{item.Key}: {item.Value}");
             }
         }
+
+        [GeneratedRegex(@"#\w+")]
+        private static partial Regex MyRegex();
     }
 }
