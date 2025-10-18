@@ -1,10 +1,11 @@
 ﻿namespace DependencyInjection
 {
-    public class DBMessageWriter : IMessageWriter
+
+    public class DbMessageWriter : IMessageWriter
     {
-          public void Write(string message)
+        public void Write(string message)
         {
-            Console.WriteLine($"In a real life situation, I will insert this is into a database --> MessageWriter.Write(message: \"{message}\")");
+            Console.WriteLine($"DB Based: In real world, send data to db instead of console ==>  MessageWriter.Write(message: \"{message}\")");
         }
     }
 }
