@@ -12,8 +12,11 @@
             Console.WriteLine("Creating a new LazyTLambdaSingleton");
         }
 
+        //private static readonly Lazy<LazyTLambdaSingleton> lazy =
+        //new Lazy<LazyTLambdaSingleton>(() => new LazyTLambdaSingleton());
         private static readonly Lazy<LazyTLambdaSingleton> lazy =
-        new Lazy<LazyTLambdaSingleton>(() => new LazyTLambdaSingleton());
+        new(() => new LazyTLambdaSingleton());
+
         public static LazyTLambdaSingleton Instance { get { return lazy.Value; } }
     }
 }

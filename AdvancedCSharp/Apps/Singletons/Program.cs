@@ -40,7 +40,7 @@ namespace csharp.training.congruent.apps
             LazyTLambdaSingleton n10 = LazyTLambdaSingleton.Instance;
             n10.WriteObject(); n10.WriteObject();
             LazyTLambdaSingleton n11 = LazyTLambdaSingleton.Instance;
-            n9.WriteObject();
+            n11.WriteObject();
 
             //Console.WriteLine("Hello, World!");
         }
