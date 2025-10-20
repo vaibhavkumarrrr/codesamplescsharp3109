@@ -1,15 +1,23 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
-using CustomExtensionMethods;
 namespace csharp.training.congruent.apps
 {
     /* Sample code that shows hello world and string manipulations */
 
     internal class Program
     {
-        static void Main(string[] _)
+        static void Main(string[] args)
         {
-            string a = "Hello , World!";
+            string a = string.Empty; 
+            if (args.Length > 0)
+            {
+                Console.WriteLine("Number of args: {0}", args.Length);
+                a = args[0]; 
+            }
+            else
+            {
+                 a = "Hello , World!";
+            }
             //string b = "Hello ";
             //b += ", World!";
             //Comment below line and uncomment above 2 lines to see string interning in action
