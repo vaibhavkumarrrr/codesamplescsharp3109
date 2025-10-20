@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "Apps
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionListChildren", "Apps\ReflectionListChildren\ReflectionListChildren.csproj", "{6B74BC95-1129-49E4-A8A5-851AF409B00F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singletons", "Apps\Singletons\Singletons.csproj", "{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{6B74BC95-1129-49E4-A8A5-851AF409B00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B74BC95-1129-49E4-A8A5-851AF409B00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B74BC95-1129-49E4-A8A5-851AF409B00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

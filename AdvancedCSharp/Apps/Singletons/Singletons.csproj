@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<RootNamespace>csharp.training.congruent.apps</RootNamespace>
 	</PropertyGroup>
-
-	<PropertyGroup>
+	
+  <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

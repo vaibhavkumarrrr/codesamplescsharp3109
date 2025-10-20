@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security;
-namespace csharp.training.congruent.apps.FileDemo
+namespace csharp.training.congruent.apps
 {
     internal class FileDemo
     {
