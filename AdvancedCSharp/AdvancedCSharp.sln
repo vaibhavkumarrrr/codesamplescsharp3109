@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionListChildren", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singletons", "Apps\Singletons\Singletons.csproj", "{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFGetStarted", "Apps\EFGetStarted\EFGetStarted.csproj", "{42CFD88A-0D62-4680-AAD7-962C9F1861F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA91D76-08C5-4317-98C8-68E5C40F9A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CFD88A-0D62-4680-AAD7-962C9F1861F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CFD88A-0D62-4680-AAD7-962C9F1861F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CFD88A-0D62-4680-AAD7-962C9F1861F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CFD88A-0D62-4680-AAD7-962C9F1861F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
