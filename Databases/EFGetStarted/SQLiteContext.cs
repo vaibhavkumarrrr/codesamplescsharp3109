@@ -1,18 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata;
-
-namespace EFGetStarted
+using csharp.training.congruent.classes;
+namespace csharp.training.congruent.apps
 {
-    public class BloggingContext : DbContext
+    public class SQLiteContext : AbstractDBContext
     {
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
-
         public string DbPath { get; }
-
-        public BloggingContext()
+        public SQLiteContext()
         {
             //var folder = Environment.SpecialFolder.LocalApplicationData;
             //var path = Environment.GetFolderPath(folder);

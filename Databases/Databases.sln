@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFGetStarted", "EFGetStarte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFSqlServer", "EFSqlServer\EFSqlServer.csproj", "{A351A127-312A-4027-BF2E-A7A6BF6B9361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEF", "DemoEF\DemoEF.csproj", "{ED0D93B4-3FD7-46DF-9BDC-C0080BD0AF8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{3505A691-EC2B-4C1B-9E93-6BE5A660A2FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A351A127-312A-4027-BF2E-A7A6BF6B9361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A351A127-312A-4027-BF2E-A7A6BF6B9361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A351A127-312A-4027-BF2E-A7A6BF6B9361}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED0D93B4-3FD7-46DF-9BDC-C0080BD0AF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED0D93B4-3FD7-46DF-9BDC-C0080BD0AF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED0D93B4-3FD7-46DF-9BDC-C0080BD0AF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED0D93B4-3FD7-46DF-9BDC-C0080BD0AF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3505A691-EC2B-4C1B-9E93-6BE5A660A2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3505A691-EC2B-4C1B-9E93-6BE5A660A2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3505A691-EC2B-4C1B-9E93-6BE5A660A2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3505A691-EC2B-4C1B-9E93-6BE5A660A2FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
