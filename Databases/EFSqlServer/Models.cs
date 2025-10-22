@@ -23,8 +23,8 @@ namespace EFSqlServer
         }
         public Animal(string name, string species)
         {
-            this.Name = name;   
-            this.Species = species;
+            this.Name = name?? string.Empty;
+            this.Species = species?? string.Empty;
         }
 
 
@@ -42,13 +42,27 @@ namespace EFSqlServer
         public ICollection<Human> Humans { get; } = [];
     }
 
-    public class FarmAnimal(string name, string species) : Animal(name, species)
+    public class FarmAnimal: Animal
    {
+        public FarmAnimal(string name) : base(name)
+        {
+            if(string.IsNullOrEmpty(Species))
+            {
+                Species = "Unknown Species";
+            }
+            if(string.IsNullOrEmpty(name)) {
+                Name= "Unnamed Farm Animal";
+            }
 
+        }
+        public FarmAnimal(string  name, string species) : base(name, species)
+        {
+            this.Name = name??  "Unnamed Farm Animal";  
+            this.Species = species?? "Unknown Species";
+        }
         public override string Species
         {
-                get { return "Farm Animal"; }
-                set { _species = "Farm Animal"; }
+            get; set; 
         }
 
         [Precision(18, 2)]

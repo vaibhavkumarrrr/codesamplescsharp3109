@@ -2,18 +2,24 @@
 
 namespace EFSqlServer
 {
-    public class EFSqlServerContext(string connectionString) : DbContext 
+    public class EFSqlServerContext : DbContext 
     {
-        private readonly string _connectionString = connectionString;
+        private readonly string _connectionString = string.Empty;
+
+        public EFSqlServerContext():base()
+        {
+            _connectionString = "Server=(localdb)\\mssqllocaldb;Trusted_Connection=True;";
+        }  
+        public EFSqlServerContext(string connectionString)
+        {
+            _connectionString = connectionString;
+        }   
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           
-            if (!optionsBuilder.IsConfigured)
-            {
-                Console.WriteLine("Configuring SQL Server"); 
-                optionsBuilder.UseSqlServer(_connectionString);
-            }
+          Console.WriteLine($"Using SQL Server with connection string: {_connectionString}");
+            optionsBuilder.UseSqlServer(_connectionString);
         }
 
 
@@ -22,17 +28,12 @@ namespace EFSqlServer
         public DbSet<Cat> Cats => Set<Cat>();
         public DbSet<Dog> Dogs => Set<Dog>();
         //public DbSet<FarmAnimal> FarmAnimals => Set<FarmAnimal>();
-        //public DbSet<FarmAnimal> FarmAnimals => Set<FarmAnimal>();
+        public DbSet<FarmAnimal> FarmAnimals => Set<FarmAnimal>();
         public DbSet<Human> Humans => Set<Human>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Enable TPC strategy for Animal hierarchy
             modelBuilder.Entity<Animal>().UseTpcMappingStrategy();
-            //modelBuilder.Entity<Cat>().UseTpcMappingStrategy();
-            //modelBuilder.Entity<Dog>().UseTpcMappingStrategy();
-            //modelBuilder.Entity<FarmAnimal>().UseTpcMappingStrategy();
-            //modelBuilder.Entity<Human>().UseTpcMappingStrategy();
 
             // Configure relationships
             modelBuilder.Entity<Pet>()
