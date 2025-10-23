@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using csharp.training.congruent.classes;
 using System.Transactions;
+using System.Security.Principal;
 
 namespace csharp.training.congruent.apps
 {
@@ -14,7 +15,11 @@ namespace csharp.training.congruent.apps
             Console.WriteLine($"Database path: {db.DbPath}.");
             // Create
             Console.WriteLine("Inserting a new blog");
-            db.Add(new Blog { BlogId  = 210, Name = "Test Blog", Url = "http://blogs.msdn.com/adonet" });
+            db.Add(new Blog {
+                BlogId = 2184,
+                Name = "Test Blog 2184",
+                Url = "http://blogspot.com/seshagirisriram/ontech"
+            });
             await db.SaveChangesAsync();
 
             // Read
@@ -37,10 +42,16 @@ namespace csharp.training.congruent.apps
                 Content = "Third Post I wrote an app using EF Core!",
                 Blog = blog
             };
+            int pCount = 1; 
             //blog.Posts(0).Comments.Add(new Comments { Content = "First Comment on First Post" });
             foreach (var t in blog.Posts)
             {
-              t.Comments.Add(new Comments { Content = $"First Comment on Post {t.Title}" });
+
+                t.Comments.Add(new Comments { Content = $"First Comment on Post {t.Title}" });
+                if(pCount++ ==1) 
+                {
+                    t.Comments.Add(new Comments { Content = $"Second Comment on Post {t.Title}" });
+                }
             }   
             //x.Comments.Add(new Comments { Content = "First Comment on Third Post" });
             Console.WriteLine(x.Blog.BlogId);   
@@ -59,7 +70,15 @@ namespace csharp.training.congruent.apps
             {
                 Console.WriteLine($"Post in db {t.PostId}, {t.Title}: {t.Content}, {t.Blog.Url}, {t.Blog.Name}");
             }   
-
+            var c = await db.Posts.Include(p => p.Blog).Include(c => c.Comments).ToListAsync();  
+            foreach(var t in c)
+            {
+                Console.WriteLine($"Post in db {t.PostId}, {t.Title}: {t.Content}, {t.Blog.Url}, {t.Blog.Name}, Number of comments: {t.Comments.Count}");
+                foreach(var com in t.Comments)
+                {
+                    Console.WriteLine($"   Comment: {com.Content}");
+                }
+            }
   
             var post = await db.Posts
                 //.Where(p => p.BlogId == blog.BlogId && p.PostId ==2)
