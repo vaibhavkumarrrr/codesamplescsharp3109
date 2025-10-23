@@ -1,4 +1,5 @@
-﻿namespace EFSqlServer
+﻿using csharp.training.congruent.classes; 
+namespace csharp.training.congruent.apps
 {
     internal class Program
     {

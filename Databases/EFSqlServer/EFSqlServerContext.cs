@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
-namespace EFSqlServer
+using csharp.training.congruent.classes;
+namespace csharp.training.congruent.apps
 {
     public class EFSqlServerContext : DbContext 
     {
