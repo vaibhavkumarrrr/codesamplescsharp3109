@@ -1,4 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>	
+  <RootNamespace>csharp.training.congruent.apps</RootNamespace>
+</PropertyGroup>
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>

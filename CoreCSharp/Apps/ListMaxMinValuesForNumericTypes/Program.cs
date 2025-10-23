@@ -1,11 +1,10 @@
 ﻿using System.Numerics;
-using System.Reflection;
 
 namespace csharp.training.congruent.apps
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             /*
              * 

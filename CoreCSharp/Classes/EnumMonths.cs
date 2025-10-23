@@ -1,4 +1,4 @@
-namespace csharp.training.congruent.enums 
+namespace csharp.training.congruent.classes
 {
 	public enum Month : ushort
 	{

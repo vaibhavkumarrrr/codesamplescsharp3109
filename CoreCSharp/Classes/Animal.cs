@@ -24,7 +24,7 @@ public class Animal
     }
         public void Announce()
         {
-            Console.WriteLine($"I am : {this.Name} and I am {this.GetType().ToString()}");
+            Console.WriteLine($"I am : {this.Name} and I am {this.GetType()}");
         }
     }
 }

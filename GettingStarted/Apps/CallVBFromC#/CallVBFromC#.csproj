@@ -1,5 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<PropertyGroup>
+		<RootNamespace>csharp.training.congruent.apps</RootNamespace>
+	</PropertyGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
@@ -7,9 +10,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\ClassLibs\VBClassLib\VBClassLib.vbproj" />
+    <ProjectReference Include="..\..\Libraries\VBClassLib\VBClassLib.vbproj" />
   </ItemGroup>
+
 
 </Project>

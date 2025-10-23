@@ -1,4 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>	
+  <RootNamespace>csharp.training.congruent.apps</RootNamespace>
+</PropertyGroup>
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,5 +9,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\ClassLib\ClassLib.csproj" />
+  </ItemGroup>
 
 </Project>

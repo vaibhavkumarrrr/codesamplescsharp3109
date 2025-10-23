@@ -1,21 +1,18 @@
-﻿namespace csharp.training.congruent.aps
+﻿namespace csharp.training.congruent.apps
 {
-    public struct TaggedInteger
+    public struct TaggedInteger(int n)
     {
-        public int Number;
-        private List<string> tags;
-        public TaggedInteger(int n)
-        {
-            Number = n; tags = new List<string>();
-        }
-        public void AddTag(string tag) => tags.Add(tag);
-        public override string ToString() => $"{Number} [{string.Join(", ", tags)}]";
+        public int Number = n;
+        private readonly List<string> tags = [];
+
+        public readonly void AddTag(string tag) => tags.Add(tag);
+        public override readonly string ToString() => $"{Number} [{string.Join(", ", tags)}]";
     }
 
 
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             var n1 = new TaggedInteger(0); n1.AddTag("A"); 
             Console.WriteLine(n1);// output: 0 [A]        

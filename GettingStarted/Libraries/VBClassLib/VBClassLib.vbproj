@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>csharp.training.congruent.apps.LINQ</RootNamespace>
+	</PropertyGroup>
+	
+  <PropertyGroup>
+    <RootNamespace>VBClassLib</RootNamespace>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
