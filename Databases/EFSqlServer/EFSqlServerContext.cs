@@ -19,7 +19,7 @@ namespace csharp.training.congruent.apps
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
           Console.WriteLine($"Using SQL Server with connection string: {_connectionString}");
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlServer(_connectionString).UseLazyLoadingProxies(); 
         }
 
 
