@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using csharp.training.congruent.classes;
+using System.Transactions;
 
 namespace csharp.training.congruent.apps
 {
@@ -13,7 +14,7 @@ namespace csharp.training.congruent.apps
             Console.WriteLine($"Database path: {db.DbPath}.");
             // Create
             Console.WriteLine("Inserting a new blog");
-            db.Add(new Blog { Name = "Test Blog", Url = "http://blogs.msdn.com/adonet" });
+            db.Add(new Blog { BlogId  = 210, Name = "Test Blog", Url = "http://blogs.msdn.com/adonet" });
             await db.SaveChangesAsync();
 
             // Read
@@ -36,7 +37,12 @@ namespace csharp.training.congruent.apps
                 Content = "Third Post I wrote an app using EF Core!",
                 Blog = blog
             };
-
+            //blog.Posts(0).Comments.Add(new Comments { Content = "First Comment on First Post" });
+            foreach (var t in blog.Posts)
+            {
+              t.Comments.Add(new Comments { Content = $"First Comment on Post {t.Title}" });
+            }   
+            //x.Comments.Add(new Comments { Content = "First Comment on Third Post" });
             Console.WriteLine(x.Blog.BlogId);   
 
             await db.SaveChangesAsync();
@@ -51,7 +57,7 @@ namespace csharp.training.congruent.apps
             var posts = await db.Posts.Include(p=>p.Blog).ToListAsync();  
             foreach(var t in posts)
             {
-                Console.WriteLine($"Post in db {t.PostId}, {t.BlogId}, {t.Title}: {t.Content}, {t.Blog.Url}, {t.Blog.Name}");
+                Console.WriteLine($"Post in db {t.PostId}, {t.Title}: {t.Content}, {t.Blog.Url}, {t.Blog.Name}");
             }   
 
   

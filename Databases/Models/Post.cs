@@ -7,5 +7,10 @@
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
         public Blog Blog { get; set; } = new Blog();
+        private readonly List<Comments> comments = [];
+        public List<Comments> Comments 
+        { 
+            get { return comments; }
+        }
     }
 }

@@ -19,6 +19,7 @@
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
+Migrations/
 x64/
 x86/
 bld/

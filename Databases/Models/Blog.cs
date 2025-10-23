@@ -23,6 +23,12 @@
         public Blog(string name, string url)
         {
             _name = name;
+            _url = url;
+        }
+         public Blog(int id, string name, string url)
+        {
+            BlogId = id;
+            _name = name;
             _url  = url;
         }
         public override string ToString()
