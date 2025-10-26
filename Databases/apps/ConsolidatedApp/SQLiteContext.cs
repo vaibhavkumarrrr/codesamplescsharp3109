@@ -1,39 +1,38 @@
-﻿using Microsoft.EntityFrameworkCore;
-using csharp.training.congruent.classes;
-namespace csharp.training.congruent.apps
+﻿using csharp.training.congruent.classes;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+namespace ConsolidatedApp
 {
-    public class EFSqlServerContext : DbContext 
+    public class SQLiteContext : DbContext
     {
         private readonly string _connectionString = string.Empty;
-
-        public EFSqlServerContext():base()
+        public SQLiteContext()
         {
-            _connectionString = "Server=(localdb)\\mssqllocaldb;Trusted_Connection=True;";
-        }  
-        public EFSqlServerContext(string connectionString)
+            _connectionString = ConfigurationManager.ConnectionStrings["SQLite"].ConnectionString;
+        }
+        public SQLiteContext(string connectionString)
         {
             _connectionString = connectionString;
-        }   
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-          Console.WriteLine($"Using SQL Server with connection string: {_connectionString}");
-            optionsBuilder.UseSqlServer(_connectionString).UseLazyLoadingProxies(); 
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlite(_connectionString);
+        // All Blogs, Posts and Comments
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<RSSBlog> RssBlogs { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comments> Comments { get; set; }
 
-
-        // Concrete entities
+        // Cats, Dogs, FarmAnimals and Humans
         public DbSet<Food> Foods => Set<Food>();
         public DbSet<Cat> Cats => Set<Cat>();
         public DbSet<Dog> Dogs => Set<Dog>();
         //public DbSet<FarmAnimal> FarmAnimals => Set<FarmAnimal>();
-        public DbSet<FarmAnimal> FarmAnimals => Set<FarmAnimal>();
         public DbSet<Human> Humans => Set<Human>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Animal>().UseTpcMappingStrategy();
+            modelBuilder.Entity<Animal>().
+                UseTpcMappingStrategy();
 
             // Configure relationships
             modelBuilder.Entity<Pet>()
@@ -53,8 +52,16 @@ namespace csharp.training.congruent.apps
 
             // Optional: Configure precision for FarmAnimal.Value
             //modelBuilder.Entity<FarmAnimal>()
-              //  .Property(f => f.Value)
-                //.HasPrecision(18, 2);
+            //  .Property(f => f.Value)
+            //.HasPrecision(18, 2);
+
+		/*  Uncomment to allow for custom build....; 
+ 		modelBuilder.
+   Entity<Blog>().
+   Property(b => b.BlogId).
+   ValueGeneratedNever();
+ */
         }
+
     }
 }
