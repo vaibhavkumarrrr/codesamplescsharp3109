@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    int c = 300;
+    string message = c > 200 ? "The value is greater than 200." : "The value is 200 or less.";
+    ViewData["Message"] = message; ; 
+}
+
+<h1>@ViewData["Message"]</h1>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
