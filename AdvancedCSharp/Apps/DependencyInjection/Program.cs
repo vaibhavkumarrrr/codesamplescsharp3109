@@ -7,12 +7,17 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Configuration;
 using System.Reflection;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 // left as an excerise to clean this up :-) 
 
 // CRUEL HACK FOR LOG4NET 
 System.Text.Encoding.RegisterProvider(
     System.Text.CodePagesEncodingProvider.Instance);
 
+foreach (string s in ConfigurationManager.AppSettings.AllKeys)
+{
+    System.Console.WriteLine("App Setting Key:"+s);
+}
 var categoryName = typeof(Worker).FullName;
 Console.WriteLine($"Expected logger category: {categoryName}");
 // the default is to use app.exe.config 
